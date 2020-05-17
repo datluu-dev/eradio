@@ -1,37 +1,39 @@
 {% extends "base.html" %}
 
 {% block css %}
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
+	<link rel="stylesheet" type="text/css" href="/css/login.css">
 {% endblock %}
 
 {% block content %}
-	<div class="card card-login">
-		<div class="card-body">
-			<div class="logo-eradio-region row">
-				<div>
-					<div class="logo-eradio"></div>
-					<div class="eradio-text">Eradio</div>
+	<div class="container-login">
+		<div class="card card-login">
+			<div class="card-body">
+				<div class="logo-eradio-region row justify-content-center">
+					<div class="d-flex">
+						<!-- <div class="logo-eradio" style="background-image: url('/images/eradio.png');"></div> -->
+						<img src="/images/eradio.png" class="logo-eradio">
+						<div class="eradio-text eradio-color pt-1">Eradio</div>
+					</div>
 				</div>
+				<form id="login-form row">
+					<div class="form-row">
+						<input type="email" class="form-control" id="login-email" placeholder="Email">
+					</div>
+					<div class="form-row py-2">
+						<input type="password" class="form-control" id="login-password" placeholder="Mật khẩu">
+					</div>
+					<div class="form-group pt-4">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="remember-account-checkbox">
+							<label class="custom-control-label pt-1 remember-account-text" for="remember-account-checkbox">Nhớ tài khoản của tôi</label>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-block btn-eradio"> Đăng nhập </button>
+				</form>
+				<div class="row not-have-account-text justify-content-center d-flex pt-3">Bạn chưa có tài khoản?</div>
+				<a class="row justify-content-center d-flex pt-3" href="{{ url_for('sign_up') }}">Tạo tài khoản mới</a>
+				
 			</div>
-			<form id="login-form row">
-				<div class="form-row">
-					<input type="email" class="form-control" id="login-email" placeholder="Email">
-				</div>
-				<div class="form-row">
-					<input type="password" class="form-control" id="login-password" placeholder="Mật khẩu">
-				</div>
-				<div class="form-group">
-					<input type="checkbox" class="form-check-input" id="remember-account">
-					<label class="form-check-label" for="remember-account">
-						Nhớ tài khoản của tôi
-					</label>
-				</div>
-				<button type="submit" class="btn btn-primary"> Đăng nhập </button>
-			</form>
-			<div class="row not-have-account">Bạn chưa có tài khoản?</div>
-			<a class="row" href="{{ url_for('sign_up') }}">Tạo tài khoản mới</a>
-			
 		</div>
-	</div>
-
+	
 {% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block css %}
+	<link rel="stylesheet" type="text/css" href="/css/signup.css">
+{% endblock %}
+
+{% block content %}
+	<div class="container-signup">
+		<div class="card card-signup">
+			<div class="card-body">
+				<div class="logo-eradio-region row justify-content-center">
+					<div class="d-flex">
+						<img src="/images/eradio.png" class="logo-eradio">
+						<div class="eradio-text eradio-color pt-1">Eradio</div>
+					</div>
+				</div>
+				<form id="signup-form row">
+					<div class="form-row">
+						<input type="email" class="form-control" id="signup-email" placeholder="Email">
+					</div>
+					<div class="form-row py-2">
+						<input type="password" class="form-control" id="signup-password" placeholder="Mật khẩu">
+					</div>
+					<div class="form-row py-2">
+						<input type="password" class="form-control" id="signup-password-validate" placeholder="Nhập lại mật khẩu">
+					</div>
+					<div class="form-group pt-4">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="remember-account-checkbox">
+							<label class="custom-control-label pt-1 remember-account-text" for="remember-account-checkbox">
+								Tôi đồng ý với <a href="{{ url_for('verify') }}">Các điều khoản dịch vụ</a>
+							</label>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-block btn-eradio"> Tạo tài khoản </button>
+				</form>
+				<div class="row not-have-account-text justify-content-center d-flex pt-3">Bạn đã có tài khoản?</div>
+				<a class="row justify-content-center d-flex pt-3" href="{{ url_for('login') }}">Đăng nhập</a>
+				
+			</div>
+		</div>
+	
+{% endblock %}

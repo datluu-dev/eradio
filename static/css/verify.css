@@ -1,0 +1,13 @@
+.card-verify {
+	width: 400px;
+	margin: 20% auto;
+	border-radius: 1.25rem;
+}
+
+.thankyou-text {
+	height: auto;
+	font-size: 36px;
+	line-height: 46px;
+	text-align: center;
+	color: #000000;
+}

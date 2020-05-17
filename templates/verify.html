@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block css %}
+	<link rel="stylesheet" type="text/css" href="/css/verify.css">
+{% endblock %}
+
+{% block content %}
+	<div class="container-verify">
+		<div class="card card-verify">
+			<div class="card-body">
+				<div class="logo-eradio-region row justify-content-center">
+					<div class="d-flex">
+						<img src="/images/eradio.png" class="logo-eradio">
+						<div class="eradio-text eradio-color pt-1">Eradio</div>
+					</div>
+				</div>
+
+				<div class="row py-4 pb-5">
+					<div class="col-md-9 thankyou-text eradio-text">
+						Cảm ơn bạn đã đăng ký!
+					</div>
+				</div>
+
+				<div class="row justify-content-center pb-5">
+					<div class="col-md-8 d-flex">
+						<button class="btn btn-eradio btn-block" id="back-login" type="button">Quay lại trang đăng nhập</button>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+{% endblock %}
+
+{% block js %}
+	<script type="text/javascript">
+		$('#back-login').click(function() {
+			// body...
+			window.location= '/Account/Login'
+		})
+	</script>
+{% endblock %}
